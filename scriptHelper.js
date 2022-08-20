@@ -25,7 +25,7 @@ function addDestinationInfo(
 
 function validateInput(testInput) {
   let numInput = Number(testInput);
-  if (numInput === "") {
+  if (testInput === "") {
     return "Empty";
   } else if (isNaN(numInput)) {
     return "Not a Number";
