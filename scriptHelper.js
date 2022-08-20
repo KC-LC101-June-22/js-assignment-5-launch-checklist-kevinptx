@@ -1,14 +1,6 @@
 // Write your helper functions here!
 require("isomorphic-fetch");
 
-/*document,
-name,
-diameter,
-star,
-distance,
-moons,
-imageUrl
-*/
 function addDestinationInfo(
   document,
   name,
