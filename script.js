@@ -22,6 +22,8 @@ window.addEventListener("load", function () {
       );
     });
   const form = document.querySelector("form");
+  const list = document.getElementById("faultyItems");
+  list.style.visibility = "hidden";
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     let pilotNameInput = document.querySelector("input[name=pilotName]");
@@ -32,7 +34,7 @@ window.addEventListener("load", function () {
     let fuelLevel = Number(fuelLevelInput.value);
     let cargoMassInput = document.querySelector("input[name=cargoMass]");
     let cargoLevel = Number(cargoMassInput.value);
-    const list = document.getElementById("faultyItems");
+
     formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
   });
 });
