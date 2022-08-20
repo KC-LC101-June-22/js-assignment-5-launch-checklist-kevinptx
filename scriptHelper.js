@@ -70,30 +70,30 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
   let cargoStatus = document.getElementById("cargoStatus");
   let launchStatus = document.getElementById("launchStatus");
 
-  pilotStatus.innerHTML = `${pilot} Ready`;
-  copilotStatus.innerHTML = `${copilot} Ready`;
+  pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+  copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
 
   if (fuelLevel < 10000 && cargoLevel > 10000) {
     list.style.visibility = "visible";
-    fuelStatus.innerHTML = `${fuelLevel} Liters of fuel is not enough for the journey.`;
-    cargoStatus.innerHTML = `${cargoLevel} Kg cargo means there is too much mass for takeoff.`;
+    fuelStatus.innerHTML = `Fuel level high enough for launch`;
+    cargoStatus.innerHTML = `Cargo mass too heavy for launch`;
     launchStatus.innerHTML = "Shuttle not ready for launch.";
     launchStatus.style.color = "red";
   } else if (fuelLevel < 10000 && cargoLevel < 10000) {
     list.style.visibility = "visible";
-    fuelStatus.innerHTML = `${fuelLevel} Liters of fuel is not enough for the journey.`;
-    cargoStatus.innerHTML = `${cargoLevel} Kg cargo means that part is ready for the journey.`;
+    fuelStatus.innerHTML = `Fuel level high enough for launch`;
+    cargoStatus.innerHTML = `Cargo mass low enough for launch`;
     launchStatus.innerHTML = "Shuttle not ready for launch.";
     launchStatus.style.color = "red";
   } else if (cargoLevel > 10000 && fuelLevel > 10000) {
     list.style.visibility = "visible";
-    fuelStatus.innerHTML = `${fuelLevel} Liters of fuel means that part is ready for the journey.`;
-    cargoStatus.innerHTML = `${cargoLevel} Kg cargo means there is too much mass for takeoff.`;
+    fuelStatus.innerHTML = `Fuel level high enough for launch`;
+    cargoStatus.innerHTML = `Cargo mass too heavy for launch`;
     launchStatus.innerHTML = "Shuttle not ready for launch";
     launchStatus.style.color = "red";
   } else {
-    fuelStatus.innerHTML = `${fuelLevel} high enough for launch`;
-    cargoStatus.innerHTML = `${cargoLevel} low enough for launch`;
+    fuelStatus.innerHTML = `Fuel level high enough for launch`;
+    cargoStatus.innerHTML = `Cargo mass low enough for launch`;
     launchStatus.innerHTML = "Shuttle is ready for launch";
     launchStatus.style.color = "green";
   }
