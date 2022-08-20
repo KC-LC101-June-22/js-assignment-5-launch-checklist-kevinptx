@@ -9,22 +9,26 @@ distance,
 moons,
 imageUrl
 */
-function addDestinationInfo(randomPlanet) {
-  console.log("logging randomPlanet in scriptHelper.js", randomPlanet);
-  //  Then using pickPlanet() and addDestinationInfo(), select a planet at random from listedPlanets
-  //  and pass that information to addDestinationInfo(). Reload your page and check out your site to see
-  //  the mission target information.
+function addDestinationInfo(
+  document,
+  name,
+  diameter,
+  star,
+  distance,
+  moons,
+  imageUrl
+) {
   missionTargetDiv = document.getElementById("missionTarget");
   missionTargetDiv.innerHTML = `
   <h2>Mission Destination</h2>
   <ol>
-      <li>Name: ${randomPlanet.name}</li>
-      <li>Diameter: ${randomPlanet.diameter}</li>
-      <li>Star: ${randomPlanet.star}</li>
-      <li>Distance from Earth: ${randomPlanet.distance}</li>
-      <li>Number of Moons: ${randomPlanet.moons}</li>
+      <li>Name: ${name}</li>
+      <li>Diameter: ${diameter}</li>
+      <li>Star: ${star}</li>
+      <li>Distance from Earth: ${distance}</li>
+      <li>Number of Moons: ${moons}</li>
   </ol>
-  <img src="${randomPlanet.image}">`;
+  <img src="${imageUrl}">`;
 }
 
 function validateInput(testInput) {
@@ -75,25 +79,25 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
   if (fuelLevel < 10000 && cargoLevel > 10000) {
     list.style.visibility = "visible";
-    fuelStatus.innerHTML = `Fuel level high enough for launch`;
-    cargoStatus.innerHTML = `Cargo mass too heavy for launch`;
+    fuelStatus.innerHTML = "Fuel level too low for launch";
+    cargoStatus.innerHTML = "Cargo mass too heavy for launch";
     launchStatus.innerHTML = "Shuttle not ready for launch.";
     launchStatus.style.color = "red";
   } else if (fuelLevel < 10000 && cargoLevel < 10000) {
     list.style.visibility = "visible";
-    fuelStatus.innerHTML = `Fuel level high enough for launch`;
-    cargoStatus.innerHTML = `Cargo mass low enough for launch`;
+    fuelStatus.innerHTML = "Fuel level too low for launch";
+    cargoStatus.innerHTML = "Cargo mass low enough for launch";
     launchStatus.innerHTML = "Shuttle not ready for launch.";
     launchStatus.style.color = "red";
-  } else if (cargoLevel > 10000 && fuelLevel > 10000) {
+  } else if (fuelLevel > 10000 && cargoLevel > 10000) {
     list.style.visibility = "visible";
-    fuelStatus.innerHTML = `Fuel level high enough for launch`;
-    cargoStatus.innerHTML = `Cargo mass too heavy for launch`;
+    fuelStatus.innerHTML = "Fuel level high enough for launch";
+    cargoStatus.innerHTML = "Cargo mass too heavy for launch";
     launchStatus.innerHTML = "Shuttle not ready for launch";
     launchStatus.style.color = "red";
   } else {
-    fuelStatus.innerHTML = `Fuel level high enough for launch`;
-    cargoStatus.innerHTML = `Cargo mass low enough for launch`;
+    fuelStatus.innerHTML = "Fuel level high enough for launch";
+    cargoStatus.innerHTML = "Cargo mass low enough for launch";
     launchStatus.innerHTML = "Shuttle is ready for launch";
     launchStatus.style.color = "green";
   }
