@@ -21,10 +21,10 @@ window.addEventListener("load", function () {
         randomPlanet.image
       );
     });
-  const form = document.querySelector("form");
+  const formSubmit = document.getElementById("formSubmitm");
   const list = document.getElementById("faultyItems");
   list.style.visibility = "hidden";
-  form.addEventListener("submit", function (event) {
+  formSubmit.addEventListener("submit", function (event) {
     event.preventDefault();
     let pilotNameInput = document.querySelector("input[name=pilotName]");
     let pilot = pilotNameInput.value;
