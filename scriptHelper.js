@@ -1,5 +1,6 @@
 // Write your helper functions here!
 require("isomorphic-fetch");
+const fetch = require("node-fetch");
 
 function addDestinationInfo(
   document,
